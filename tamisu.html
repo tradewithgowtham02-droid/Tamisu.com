@@ -1,0 +1,1954 @@
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Tamisu — Affordable Elegance | Everything Under ₹5,000</title>
+  <meta name="description" content="Tamisu Festive Atelier — handcrafted festive couture, strictly under ₹5,000. INR native pricing, Akshata Management Console, dynamic budget validator & interactive AI Stylist." />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          },
+          colors: {
+            brand: {
+              cream: '#FAF8F5',
+              sand: '#F4EFEA',
+              card: '#FFFFFF',
+              dark: '#141413',
+              charcoal: '#20201E',
+              gold: '#C5A880',
+              goldHover: '#B39364',
+              goldLight: '#F8F2E8',
+              emerald: '#064E3B',
+              emeraldLight: '#E8F5EE',
+              ruby: '#881337',
+              border: '#E7E0D6',
+              muted: '#787066'
+            }
+          },
+          boxShadow: {
+            'luxury': '0 20px 48px -18px rgba(20,20,19,0.12)',
+            'luxury-hover': '0 28px 56px -16px rgba(197,168,128,0.34)',
+            'soft': '0 10px 30px -10px rgba(20,20,19,0.08)',
+            'sheet': '0 -10px 40px rgba(0,0,0,0.12)'
+          },
+          animation: {
+            'shimmer': 'shimmer 5s linear infinite',
+            'pulse-subtle': 'pulseSubtle 3s ease-in-out infinite',
+            'float': 'float 4s ease-in-out infinite'
+          },
+          keyframes: {
+            shimmer: {
+              '0%': { backgroundPosition: '0% 50%' },
+              '100%': { backgroundPosition: '200% 50%' }
+            },
+            pulseSubtle: {
+              '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+              '50%': { opacity: '0.88', transform: 'scale(1.02)' }
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-6px)' }
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html { -webkit-font-smoothing: antialiased; }
+    body { background-color: #FAF8F5; overflow-x: hidden; }
+    
+    ::-webkit-scrollbar { width: 7px; height: 7px; }
+    ::-webkit-scrollbar-track { background: #F4EFEA; }
+    ::-webkit-scrollbar-thumb { background: #D5CDC0; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #C5A880; }
+
+    /* Fluid Typography */
+    .h1-fluid { font-size: clamp(2.2rem, 7vw, 4.4rem); line-height: 1.05; }
+    .h2-fluid { font-size: clamp(1.75rem, 5vw, 3.1rem); line-height: 1.12; }
+    .h3-fluid { font-size: clamp(1.3rem, 3.2vw, 1.85rem); line-height: 1.2; }
+    .body-fluid { font-size: clamp(0.85rem, 1.6vw, 0.98rem); }
+    .tiny-fluid { font-size: clamp(0.62rem, 1.4vw, 0.76rem); }
+
+    .gold-gradient-text {
+      background: linear-gradient(110deg, #9C7A40 0%, #D8BE96 35%, #FFF0D4 50%, #C5A880 70%, #9C7A40 100%);
+      background-size: 240% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: shimmer 7s linear infinite;
+    }
+
+    .festive-ribbon {
+      background: linear-gradient(120deg, #064E3B 0%, #0d6b52 40%, #B89358 75%, #064E3B 100%);
+      background-size: 200% 100%;
+      animation: shimmer 6s linear infinite;
+    }
+
+    .dot-pattern {
+      background-image: radial-gradient(rgba(197,168,128,0.22) 1.2px, transparent 1.2px);
+      background-size: 24px 24px;
+    }
+
+    .grid-pattern {
+      background-image: linear-gradient(rgba(197,168,128,0.12) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(197,168,128,0.12) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    /* Range slider customized */
+    input[type="range"].budget-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #064E3B 0%, #C5A880 var(--fill, 100%), #E5DDD2 var(--fill, 100%));
+      outline: none;
+      cursor: pointer;
+    }
+    input[type="range"].budget-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      background: #141413;
+      border: 3px solid #C5A880;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(20,20,19,0.3);
+      transition: transform 0.15s ease;
+    }
+    input[type="range"].budget-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    /* Active Chip styling */
+    .filter-btn.active {
+      background: #141413;
+      color: #FFFFFF;
+      border-color: #141413;
+      box-shadow: 0 8px 20px -6px rgba(20,20,19,0.35);
+    }
+    .filter-btn.active .dot {
+      background-color: #C5A880;
+    }
+
+    /* Image zoom hover effect */
+    .img-wrap {
+      overflow: hidden;
+    }
+    .img-wrap img {
+      transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+    }
+    .img-wrap:hover img {
+      transform: scale(1.08);
+    }
+
+    /* Navigation links hover line */
+    .nav-hover-line {
+      position: relative;
+    }
+    .nav-hover-line::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 1.5px;
+      background: #C5A880;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .nav-hover-line:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    /* Chat bubble animation */
+    .chat-slide-up {
+      animation: chatIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes chatIn {
+      from { opacity: 0; transform: translateY(16px) scale(0.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+  </style>
+</head>
+
+<body class="bg-brand-cream text-brand-dark font-sans selection:bg-brand-gold selection:text-white antialiased">
+
+  <!-- ================= TOP ANNOUNCEMENT BANNER ================= -->
+  <div class="bg-brand-dark text-white text-[11px] sm:text-xs uppercase tracking-[0.22em] py-2.5 px-4 border-b border-white/10 overflow-hidden">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-3 text-center sm:text-left">
+      <div class="flex items-center gap-2 mx-auto sm:mx-0">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="font-semibold text-brand-gold">Global Rate Drop:</span>
+        <span class="hidden min-[480px]:inline">New festive price structures now live across the entire atelier</span>
+        <span class="min-[480px]:hidden">All festive couture strictly under ₹5,000</span>
+      </div>
+      <div class="hidden md:flex items-center gap-5 text-stone-300 font-mono text-[10px] tracking-wider">
+        <span class="flex items-center gap-1.5"><i class="fa-solid fa-lock text-brand-gold"></i> Max Cap ₹5,000 Enforced</span>
+        <span class="flex items-center gap-1.5"><i class="fa-solid fa-truck-fast text-brand-gold"></i> Free Insured Express Over ₹1,999</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= STICKY HEADER ================= -->
+  <header class="sticky top-0 z-40 bg-brand-cream/92 backdrop-blur-xl border-b border-brand-border/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-[68px] sm:h-[76px] gap-4">
+        
+        <!-- Brand Logo -->
+        <a href="#top" class="group flex flex-col leading-none shrink-0">
+          <span class="font-serif text-2xl sm:text-3xl tracking-[0.26em] uppercase font-light text-brand-dark group-hover:text-brand-gold transition-colors duration-300">
+            Tamisu
+          </span>
+          <span class="font-serif italic text-[10px] sm:text-[11px] tracking-[0.22em] text-brand-muted -mt-0.5 group-hover:text-brand-dark transition-colors">
+            Elegance in every detail
+          </span>
+        </a>
+
+        <!-- Desktop Navigation Menu -->
+        <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-[11px] tracking-[0.18em] uppercase font-bold text-brand-charcoal">
+          <a href="#collection" class="nav-hover-line flex items-center gap-1.5 text-brand-emerald">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>Under ₹5,000
+          </a>
+          <button data-cat-nav="Women" class="nav-hover-line hover:text-brand-gold transition-colors uppercase">Women</button>
+          <button data-cat-nav="Men" class="nav-hover-line hover:text-brand-gold transition-colors uppercase">Men</button>
+          <button data-cat-nav="Atelier" class="nav-hover-line hover:text-brand-gold transition-colors uppercase">Accessories</button>
+          <a href="#dashboard" class="nav-hover-line flex items-center gap-1.5 text-amber-800 hover:text-amber-900 transition-colors">
+            <i class="fa-solid fa-crown text-[10px] text-amber-600"></i> Akshata Console
+          </a>
+          <a href="#why-tamisu" class="nav-hover-line hover:text-brand-gold transition-colors">Philosophy</a>
+        </nav>
+
+        <!-- Right Action Hub -->
+        <div class="flex items-center gap-2.5 sm:gap-3">
+          
+          <!-- Live Search Bar -->
+          <div class="relative hidden sm:block">
+            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-xs text-brand-muted"></i>
+            <input 
+              id="global-search" 
+              type="text" 
+              placeholder="Search under ₹5,000..." 
+              class="w-[180px] xl:w-[230px] bg-brand-sand/70 hover:bg-brand-sand focus:bg-white text-xs pl-9 pr-3.5 py-2.5 rounded-full border border-brand-border focus:border-brand-gold focus:outline-none transition-all placeholder:text-brand-muted/70"
+            />
+          </div>
+
+          <!-- Open Assistant Quick Trigger -->
+          <button 
+            id="header-ai-btn" 
+            class="hidden md:inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-brand-sand hover:bg-brand-goldLight text-brand-dark border border-brand-border text-[11px] font-semibold tracking-wider uppercase transition-colors"
+            title="Ask AI Stylist"
+          >
+            <i class="fa-solid fa-wand-magic-sparkles text-brand-gold"></i>
+            <span>AI Stylist</span>
+          </button>
+
+          <!-- Shopping Bag Trigger -->
+          <button 
+            id="cart-trigger" 
+            class="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-brand-border bg-white flex items-center justify-center hover:border-brand-gold hover:shadow-soft transition-all"
+            aria-label="View Shopping Bag"
+          >
+            <i class="fa-solid fa-bag-shopping text-sm text-brand-dark"></i>
+            <span id="cart-badge-count" class="absolute -top-1 -right-1 min-w-[19px] h-[19px] px-1 rounded-full bg-brand-emerald text-white text-[9px] font-bold flex items-center justify-center font-mono">
+              0
+            </span>
+          </button>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button 
+            id="mobile-drawer-btn" 
+            class="lg:hidden w-10 h-10 rounded-full border border-brand-border bg-white flex items-center justify-center text-brand-dark hover:border-brand-gold transition-colors"
+            aria-label="Toggle Navigation Drawer"
+          >
+            <i class="fa-solid fa-bars text-sm"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MOBILE MENU DRAWER ================= -->
+  <div id="mobile-overlay" class="fixed inset-0 bg-brand-dark/50 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  <aside id="mobile-drawer" class="fixed top-0 right-0 h-full w-[86%] max-w-[340px] bg-brand-cream z-50 translate-x-full transition-transform duration-300 ease-out flex flex-col shadow-2xl">
+    <div class="flex items-center justify-between p-5 border-b border-brand-border bg-brand-sand/50">
+      <div class="flex flex-col">
+        <span class="font-serif text-xl tracking-[0.2em] uppercase font-light">Tamisu</span>
+        <span class="font-serif italic text-[10px] text-brand-gold">Under ₹5,000 Festive Edit</span>
+      </div>
+      <button id="mobile-close-btn" class="w-9 h-9 rounded-full border border-brand-border flex items-center justify-center text-stone-600 hover:text-black">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="p-5 flex-1 overflow-y-auto space-y-4">
+      <!-- Mobile Search -->
+      <div class="relative">
+        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-xs text-brand-muted"></i>
+        <input 
+          id="mobile-search-input" 
+          type="text" 
+          placeholder="Search garments under ₹5,000..." 
+          class="w-full bg-white text-xs pl-9 pr-4 py-3 rounded-xl border border-brand-border focus:border-brand-gold focus:outline-none"
+        />
+      </div>
+
+      <nav class="flex flex-col gap-2 pt-2 text-[11px] uppercase tracking-[0.16em] font-bold">
+        <button data-cat-mobile="all" class="flex items-center justify-between p-3.5 rounded-xl bg-white border border-brand-border text-brand-emerald text-left">
+          <span class="flex items-center gap-2"><i class="fa-solid fa-tag text-brand-gold"></i> Complete Festive Edit</span>
+          <i class="fa-solid fa-chevron-right text-[10px]"></i>
+        </button>
+        <button data-cat-mobile="Women" class="flex items-center justify-between p-3.5 rounded-xl bg-white border border-brand-border hover:bg-brand-sand text-left">
+          <span>Women's Couture</span>
+          <i class="fa-solid fa-chevron-right text-[10px] text-brand-muted"></i>
+        </button>
+        <button data-cat-mobile="Men" class="flex items-center justify-between p-3.5 rounded-xl bg-white border border-brand-border hover:bg-brand-sand text-left">
+          <span>Men's Royal Atelier</span>
+          <i class="fa-solid fa-chevron-right text-[10px] text-brand-muted"></i>
+        </button>
+        <button data-cat-mobile="Atelier" class="flex items-center justify-between p-3.5 rounded-xl bg-white border border-brand-border hover:bg-brand-sand text-left">
+          <span>Accessories & Stoles</span>
+          <i class="fa-solid fa-chevron-right text-[10px] text-brand-muted"></i>
+        </button>
+        <a href="#dashboard" class="mobile-nav-link flex items-center justify-between p-3.5 rounded-xl bg-amber-500/10 border border-amber-600/30 text-amber-900 mt-2">
+          <span class="flex items-center gap-2"><i class="fa-solid fa-crown text-amber-600"></i> Akshata Dashboard</span>
+          <span class="text-[9px] bg-amber-600 text-white px-2 py-0.5 rounded-full">Admin</span>
+        </a>
+      </nav>
+
+      <!-- Mobile AI Assistant trigger card -->
+      <div class="mt-4 p-4 rounded-xl bg-gradient-to-br from-brand-sand to-brand-goldLight border border-brand-gold/30">
+        <div class="flex items-center gap-2 text-xs font-serif font-bold text-brand-dark mb-1">
+          <i class="fa-solid fa-wand-magic-sparkles text-brand-gold"></i> Tamisu AI Assistant
+        </div>
+        <p class="text-[11px] text-brand-muted mb-3 leading-relaxed">
+          Need help sizing or matching accessories under your budget?
+        </p>
+        <button id="mobile-open-ai" class="w-full py-2.5 rounded-lg bg-brand-dark text-white text-[10px] uppercase font-bold tracking-widest flex items-center justify-center gap-2">
+          <span>Start Stylist Chat</span>
+          <i class="fa-solid fa-arrow-right text-[9px] text-brand-gold"></i>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative overflow-hidden border-b border-brand-border/70 dot-pattern">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        
+        <!-- Left Hero Content -->
+        <div class="lg:col-span-6 space-y-6">
+          
+          <!-- Smart Badge -->
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-brand-gold/40 shadow-soft">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+            <span class="tiny-fluid uppercase tracking-[0.2em] font-bold text-brand-emerald">
+              Affordable Elegance: Everything Under ₹5,000
+            </span>
+          </div>
+
+          <!-- Main Heading -->
+          <h1 class="font-serif font-light h1-fluid text-brand-dark tracking-tight">
+            Handcrafted luxury, <br class="hidden sm:inline" />
+            strictly priced <br class="hidden sm:inline" />
+            <span class="gold-gradient-text italic font-normal">under ₹5,000.</span>
+          </h1>
+
+          <!-- Body Copy -->
+          <p class="text-brand-muted body-fluid leading-relaxed max-w-xl">
+            We have redefined high-end festive fashion by introducing a global rate drop across all silk sarees, royal sherwanis, and handcrafted kurtas. Every single piece in our active catalog is guaranteed under the strict ₹5,000 ceiling.
+          </p>
+
+          <!-- Quick Stats Pill Container -->
+          <div class="grid grid-cols-3 gap-2.5 sm:gap-4 max-w-lg pt-2">
+            <div class="bg-white border border-brand-border rounded-xl p-3 sm:p-4 text-center">
+              <span class="block text-[10px] uppercase tracking-wider text-brand-muted font-bold">Hard Cap</span>
+              <span class="font-mono text-base sm:text-xl font-bold text-brand-emerald">₹5,000</span>
+            </div>
+            <div class="bg-white border border-brand-border rounded-xl p-3 sm:p-4 text-center">
+              <span class="block text-[10px] uppercase tracking-wider text-brand-muted font-bold">Sort Logic</span>
+              <span class="font-serif text-sm sm:text-base font-semibold text-brand-dark">Low → High</span>
+            </div>
+            <div class="bg-white border border-brand-border rounded-xl p-3 sm:p-4 text-center">
+              <span class="block text-[10px] uppercase tracking-wider text-brand-muted font-bold">Starting At</span>
+              <span class="font-mono text-base sm:text-xl font-bold text-brand-gold">₹999</span>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+            <a 
+              href="#collection" 
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-brand-dark text-white text-xs uppercase tracking-[0.18em] font-bold shadow-luxury hover:bg-brand-charcoal hover:-translate-y-0.5 transition-all text-center"
+            >
+              <span>Explore Collection</span>
+              <i class="fa-solid fa-arrow-down text-brand-gold text-[11px]"></i>
+            </a>
+            <button 
+              id="hero-ai-trigger"
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-full bg-white border border-brand-border text-brand-dark hover:bg-brand-sand text-xs uppercase tracking-[0.16em] font-semibold transition-all text-center"
+            >
+              <i class="fa-solid fa-wand-magic-sparkles text-brand-emerald"></i>
+              <span>Consult AI Stylist</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Right Hero Visual Collage -->
+        <div class="lg:col-span-6">
+          <div class="grid grid-cols-12 gap-3 sm:gap-4 items-center">
+            
+            <!-- Left Large Feature Image -->
+            <div class="col-span-7">
+              <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-luxury img-wrap h-[340px] sm:h-[440px] lg:h-[480px]">
+                <img 
+                  src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=900&auto=format&fit=crop" 
+                  alt="Zari Silk Saree" 
+                  class="w-full h-full object-cover object-top"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/85 via-brand-dark/15 to-transparent"></div>
+                
+                <!-- Badge on card -->
+                <div class="absolute top-3.5 left-3.5">
+                  <span class="festive-ribbon text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.16em] px-3 py-1.5 rounded-full shadow-md inline-flex items-center gap-1.5">
+                    <i class="fa-solid fa-sparkles text-brand-gold"></i> Guaranteed Under ₹5k
+                  </span>
+                </div>
+
+                <div class="absolute bottom-4 left-4 right-4 text-white">
+                  <p class="font-serif text-xl sm:text-2xl italic leading-tight">Banarasi Pure Silk Zari Saree</p>
+                  <div class="flex items-center gap-2 mt-2">
+                    <span class="bg-brand-gold text-brand-dark text-xs font-mono font-bold px-2.5 py-1 rounded-full">₹3,850</span>
+                    <span class="text-white/60 text-xs font-mono line-through">₹8,990</span>
+                    <span class="text-emerald-300 text-[10px] font-bold uppercase">57% OFF</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column Staggered Cards -->
+            <div class="col-span-5 flex flex-col gap-3 sm:gap-4">
+              
+              <div class="relative rounded-2xl overflow-hidden shadow-soft img-wrap h-[160px] sm:h-[210px]">
+                <img 
+                  src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=600&auto=format&fit=crop" 
+                  alt="Raw Silk Bandhgala" 
+                  class="w-full h-full object-cover object-top"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 to-transparent"></div>
+                <div class="absolute bottom-2.5 left-2.5 text-white">
+                  <span class="bg-white/95 text-brand-dark text-[10px] font-mono font-bold px-2 py-0.5 rounded-full">₹4,250</span>
+                  <p class="text-[11px] font-serif italic mt-1 leading-tight">Raw Silk Bandhgala</p>
+                </div>
+              </div>
+
+              <div class="relative rounded-2xl overflow-hidden shadow-soft img-wrap h-[160px] sm:h-[210px]">
+                <img 
+                  src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=600&auto=format&fit=crop" 
+                  alt="Chanderi Handloom Kurta" 
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 to-transparent"></div>
+                <div class="absolute bottom-2.5 left-2.5 text-white">
+                  <span class="bg-brand-emerald text-white text-[10px] font-mono font-bold px-2 py-0.5 rounded-full">₹2,490</span>
+                  <p class="text-[11px] font-serif italic mt-1 leading-tight">Chanderi Mirrorwork Set</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FESTIVAL COLLECTION GRID ================= -->
+  <section id="collection" class="py-12 sm:py-16 lg:py-20 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Title & Smart Filter Chip Header -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 sm:mb-10">
+        <div>
+          <!-- Smart Badge / Filter Chip requirement -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-emerald/10 border border-brand-emerald/30 text-brand-emerald text-[11px] uppercase tracking-widest font-bold mb-3">
+            <i class="fa-solid fa-crown text-brand-gold text-[10px]"></i>
+            <span>Affordable Elegance: Everything Under ₹5,000</span>
+          </div>
+          <h2 class="font-serif h2-fluid font-light text-brand-dark">
+            The Festive Collection <span class="italic text-brand-gold">Catalogue</span>
+          </h2>
+          <p class="text-brand-muted body-fluid mt-2 max-w-xl">
+            Sorted dynamically from lowest price to highest price with our strict ₹5,000 threshold. Enjoy deep festive savings on authentic artisan weaves.
+          </p>
+        </div>
+
+        <!-- Live Metrics Pill -->
+        <div class="flex items-center gap-3 bg-white border border-brand-border rounded-2xl px-5 py-3 shadow-soft w-fit">
+          <div class="w-8 h-8 rounded-full bg-brand-sand flex items-center justify-center text-brand-emerald">
+            <i class="fa-solid fa-shield-halved text-xs"></i>
+          </div>
+          <div class="text-xs">
+            <span class="block text-brand-muted text-[10px] uppercase tracking-wider font-bold">Catalog Guard</span>
+            <span class="font-mono font-semibold text-brand-dark"><span id="live-active-count">12</span> items active • all ≤ ₹5,000</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter Controls & Budget Slider Bar -->
+      <div class="bg-white border border-brand-border rounded-2xl p-4 sm:p-6 shadow-soft mb-8">
+        <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-5">
+          
+          <!-- Category Filter Buttons -->
+          <div class="flex flex-wrap items-center gap-2" role="group" aria-label="Category Filters">
+            <button data-filter="all" class="filter-btn active px-4 py-2.5 rounded-full border border-brand-border text-xs uppercase tracking-wider font-semibold transition-all">
+              <span class="dot inline-block w-1.5 h-1.5 rounded-full bg-brand-muted mr-1.5 align-middle"></span>All Festive
+            </button>
+            <button data-filter="Women" class="filter-btn px-4 py-2.5 rounded-full border border-brand-border bg-white text-xs uppercase tracking-wider font-semibold hover:bg-brand-sand transition-all">
+              <span class="dot inline-block w-1.5 h-1.5 rounded-full bg-brand-muted mr-1.5 align-middle"></span>Women
+            </button>
+            <button data-filter="Men" class="filter-btn px-4 py-2.5 rounded-full border border-brand-border bg-white text-xs uppercase tracking-wider font-semibold hover:bg-brand-sand transition-all">
+              <span class="dot inline-block w-1.5 h-1.5 rounded-full bg-brand-muted mr-1.5 align-middle"></span>Men
+            </button>
+            <button data-filter="Atelier" class="filter-btn px-4 py-2.5 rounded-full border border-brand-border bg-white text-xs uppercase tracking-wider font-semibold hover:bg-brand-sand transition-all">
+              <span class="dot inline-block w-1.5 h-1.5 rounded-full bg-brand-muted mr-1.5 align-middle"></span>Accessories
+            </button>
+          </div>
+
+          <!-- Dynamic Budget Slider (Max threshold default is ₹5,000) -->
+          <div class="w-full xl:w-[340px] pt-1">
+            <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-brand-muted mb-2">
+              <span>Max Budget Cap:</span>
+              <span class="font-mono text-brand-emerald text-sm font-bold" id="budget-val-display">₹5,000</span>
+            </div>
+            <input 
+              id="slider-budget" 
+              type="range" 
+              min="500" 
+              max="5000" 
+              step="100" 
+              value="5000" 
+              class="budget-slider"
+              aria-label="Price range filter up to 5000 rupees"
+            />
+            <div class="flex justify-between text-[10px] font-mono text-brand-muted mt-1.5">
+              <span>₹500</span>
+              <span>₹2,500</span>
+              <span class="text-brand-emerald font-bold">₹5,000 (HARD CAP)</span>
+            </div>
+          </div>
+
+          <!-- Sort Select -->
+          <div class="flex items-center gap-3">
+            <label for="catalog-sort" class="text-xs uppercase tracking-wider font-bold text-brand-muted whitespace-nowrap">
+              Sort By:
+            </label>
+            <select 
+              id="catalog-sort" 
+              class="text-xs font-semibold bg-brand-sand/60 border border-brand-border rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-brand-gold cursor-pointer"
+            >
+              <option value="asc" selected>Price: Low → High</option>
+              <option value="desc">Price: High → Low</option>
+              <option value="discount">Biggest Discount %</option>
+            </select>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Responsive Product Grid:
+           1 col on tiny mobile
+           2 cols on standard mobile (min-[430px])
+           3 cols on medium tablets (md)
+           4 cols on desktops & laptops (xl)
+      -->
+      <div id="product-grid-container" class="grid grid-cols-1 min-[430px]:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <!-- Empty State Notice -->
+      <div id="no-products-msg" class="hidden py-16 text-center">
+        <div class="w-14 h-14 rounded-full bg-brand-sand text-brand-muted flex items-center justify-center mx-auto mb-3 text-xl">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <h3 class="font-serif text-xl text-brand-dark">No pieces match this threshold</h3>
+        <p class="text-xs text-brand-muted mt-1">Adjust your budget slider or select another category.</p>
+        <button id="reset-filter-btn" class="mt-4 px-5 py-2.5 rounded-full bg-brand-dark text-white text-xs font-bold uppercase tracking-wider">
+          Reset Filters to ₹5,000
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= AKSHATA DASHBOARD ================= -->
+  <section id="dashboard" class="relative py-12 sm:py-16 lg:py-20 bg-brand-charcoal text-white scroll-mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Dashboard Top Header Bar -->
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-8 border-b border-white/10">
+        <div>
+          <div class="inline-flex items-center gap-2 text-brand-gold text-[11px] font-mono uppercase tracking-[0.2em] mb-2 font-semibold">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            Super Admin Console • Catalog Budget Controller
+          </div>
+          <div class="flex flex-wrap items-center gap-3">
+            <h2 class="font-serif h2-fluid font-light text-white">
+              Akshata <span class="italic text-brand-gold">Dashboard</span>
+            </h2>
+            <span class="bg-brand-emerald text-emerald-100 text-[10px] font-mono px-3 py-1 rounded-full uppercase tracking-wider font-bold">
+              Constraint: max ₹5,000
+            </span>
+          </div>
+          <p class="text-stone-400 text-xs sm:text-sm mt-2 max-w-xl">
+            Live catalog inventory and retail price management. All adjustments strictly validate that no item or variant can exceed ₹5,000.
+          </p>
+        </div>
+
+        <!-- Akshata Profile Card -->
+        <div class="flex items-center gap-3.5 bg-stone-900/90 border border-white/10 rounded-2xl p-4 self-start lg:self-auto">
+          <div class="relative">
+            <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-brand-gold to-amber-200 text-stone-900 font-serif font-bold text-lg flex items-center justify-center">
+              A
+            </div>
+            <span class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 rounded-full border-2 border-stone-900"></span>
+          </div>
+          <div>
+            <div class="text-xs font-bold flex items-center gap-1.5 text-stone-100">
+              Akshata <i class="fa-solid fa-circle-check text-brand-gold text-[11px]"></i>
+            </div>
+            <div class="text-[10px] text-stone-400 font-mono">Executive Creative Director</div>
+            <div class="text-[9px] text-brand-gold font-mono">Storewide Budget Guard Active</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Operational Metrics -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 py-8">
+        <div class="bg-stone-900/80 border border-white/10 rounded-2xl p-4">
+          <span class="text-[10px] uppercase font-mono tracking-wider text-stone-400 block mb-1">Max Ceiling Allowed</span>
+          <span class="font-serif text-2xl sm:text-3xl text-brand-gold font-bold">₹5,000</span>
+          <div class="text-[10px] text-emerald-400 font-mono mt-1"><i class="fa-solid fa-check"></i> Hard rule enforced</div>
+        </div>
+        <div class="bg-stone-900/80 border border-white/10 rounded-2xl p-4">
+          <span class="text-[10px] uppercase font-mono tracking-wider text-stone-400 block mb-1">Active SKUs</span>
+          <span class="font-serif text-2xl sm:text-3xl text-white font-bold" id="dash-sku-count">12</span>
+          <div class="text-[10px] text-stone-400 font-mono mt-1">All in sync with grid</div>
+        </div>
+        <div class="bg-stone-900/80 border border-white/10 rounded-2xl p-4">
+          <span class="text-[10px] uppercase font-mono tracking-wider text-stone-400 block mb-1">Average Price</span>
+          <span class="font-serif text-2xl sm:text-3xl text-white font-bold" id="dash-avg-price">₹2,480</span>
+          <div class="text-[10px] text-emerald-400 font-mono mt-1">Affordability Index 98%</div>
+        </div>
+        <div class="bg-stone-900/80 border border-white/10 rounded-2xl p-4">
+          <span class="text-[10px] uppercase font-mono tracking-wider text-stone-400 block mb-1">Over-Budget Attempts</span>
+          <span class="font-serif text-2xl sm:text-3xl text-rose-400 font-bold" id="dash-blocked-count">0</span>
+          <div class="text-[10px] text-rose-300 font-mono mt-1">Blocked automatically</div>
+        </div>
+      </div>
+
+      <!-- Main Operational Area: Add Product Form + Live Table -->
+      <div class="grid grid-cols-1 xl:grid-cols-12 gap-6 items-start">
+        
+        <!-- Left: Quick Add Form with Strict Validation -->
+        <div class="xl:col-span-4 bg-stone-900 border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
+          <div class="p-4 sm:p-5 bg-stone-950 border-b border-white/10">
+            <h3 class="text-xs uppercase tracking-[0.16em] font-bold text-brand-gold flex items-center gap-2">
+              <i class="fa-solid fa-plus-circle"></i> Add New Atelier Garment
+            </h3>
+            <p class="text-[10px] text-stone-400 mt-1 font-mono">Strict validation: festive_price &le; ₹5,000</p>
+          </div>
+
+          <form id="admin-add-form" class="p-4 sm:p-5 space-y-4">
+            <div>
+              <label class="block text-[10px] uppercase font-mono tracking-wider text-stone-400 mb-1" for="new-item-title">
+                Garment Title
+              </label>
+              <input 
+                id="new-item-title" 
+                type="text" 
+                required 
+                placeholder="e.g. Mulberry Silk Festive Angrakha"
+                class="w-full bg-stone-950 border border-white/10 rounded-xl px-3 py-2.5 text-xs text-white placeholder:text-stone-600 focus:outline-none focus:border-brand-gold"
+              />
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="block text-[10px] uppercase font-mono tracking-wider text-stone-400 mb-1" for="new-item-cat">
+                  Category
+                </label>
+                <select 
+                  id="new-item-cat" 
+                  class="w-full bg-stone-950 border border-white/10 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold"
+                >
+                  <option value="Women">Women</option>
+                  <option value="Men">Men</option>
+                  <option value="Atelier">Accessories</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-[10px] uppercase font-mono tracking-wider text-stone-400 mb-1" for="new-item-stock">
+                  Stock Units
+                </label>
+                <input 
+                  id="new-item-stock" 
+                  type="number" 
+                  min="1" 
+                  value="15" 
+                  class="w-full bg-stone-950 border border-white/10 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold font-mono"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="block text-[10px] uppercase font-mono tracking-wider text-stone-400 mb-1" for="new-item-mrp">
+                  Original MRP (₹)
+                </label>
+                <input 
+                  id="new-item-mrp" 
+                  type="number" 
+                  min="500" 
+                  value="4990" 
+                  class="w-full bg-stone-950 border border-white/10 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold font-mono"
+                />
+              </div>
+              <div>
+                <label class="block text-[10px] uppercase font-mono tracking-wider text-stone-400 mb-1" for="new-item-price">
+                  Festive Price (Max ₹5k)
+                </label>
+                <input 
+                  id="new-item-price" 
+                  type="number" 
+                  min="100" 
+                  max="5000" 
+                  value="2490" 
+                  class="w-full bg-stone-950 border border-brand-gold/50 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold font-mono"
+                />
+              </div>
+            </div>
+
+            <!-- Dynamic Budget Consumption Meter -->
+            <div class="pt-1">
+              <div class="flex justify-between text-[10px] font-mono mb-1">
+                <span class="text-stone-400">Budget Meter</span>
+                <span id="form-budget-meter" class="text-emerald-400 font-bold">50% of ₹5,000</span>
+              </div>
+              <div class="w-full h-1.5 bg-stone-950 rounded-full overflow-hidden">
+                <div id="form-budget-bar" class="h-full bg-brand-gold transition-all duration-300" style="width: 50%;"></div>
+              </div>
+            </div>
+
+            <!-- Validation Error Alert Banner -->
+            <div id="form-budget-error" class="hidden p-3 rounded-xl bg-rose-950/80 border border-rose-500/50 text-rose-200 text-[11px] leading-snug">
+              <i class="fa-solid fa-triangle-exclamation text-rose-400 mr-1.5"></i>
+              <strong>Budget Guard Triggered:</strong> Price cannot exceed ₹5,000. Entry blocked by constraint rule.
+            </div>
+
+            <button 
+              type="submit" 
+              class="w-full py-3.5 rounded-xl bg-brand-gold hover:bg-brand-goldHover text-stone-950 text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 active:scale-98"
+            >
+              <i class="fa-solid fa-check"></i> Add to Live Catalog
+            </button>
+          </form>
+        </div>
+
+        <!-- Right: Live Catalog Manager Table -->
+        <div class="xl:col-span-8 bg-stone-900 border border-white/10 rounded-2xl overflow-hidden shadow-2xl flex flex-col">
+          <div class="p-4 sm:p-5 bg-stone-950 border-b border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h3 class="text-xs uppercase tracking-[0.16em] font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-list-check text-brand-gold"></i> Live Catalog Price & Inventory Controller
+              </h3>
+              <p class="text-[10px] text-stone-400 font-mono mt-0.5">Edit prices inline. Validation prevents &gt; ₹5,000</p>
+            </div>
+            <button id="admin-reset-demo" class="self-start sm:self-auto px-3.5 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-200 text-xs font-mono transition-colors">
+              <i class="fa-solid fa-arrow-rotate-left mr-1"></i> Reset Initial Demo Data
+            </button>
+          </div>
+
+          <div class="overflow-x-auto flex-1">
+            <table class="w-full text-left text-xs font-mono border-collapse min-w-[620px]">
+              <thead>
+                <tr class="bg-stone-950/60 text-stone-400 text-[10px] uppercase border-b border-white/10">
+                  <th class="p-3.5">Piece</th>
+                  <th class="p-3.5">Category</th>
+                  <th class="p-3.5">MRP</th>
+                  <th class="p-3.5 text-brand-gold">Festive ₹ (Editable)</th>
+                  <th class="p-3.5">Stock</th>
+                  <th class="p-3.5 text-right">Action</th>
+                </tr>
+              </thead>
+              <tbody id="admin-table-rows" class="divide-y divide-white/5 text-stone-200">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= VALUE PROPOSITION ================= -->
+  <section id="why-tamisu" class="py-12 sm:py-16 bg-brand-sand/50 border-y border-brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-brand-emerald text-[11px] uppercase tracking-widest font-bold">Tamisu Standard</span>
+        <h2 class="font-serif h2-fluid font-light mt-1">Why Under ₹5,000?</h2>
+        <p class="text-brand-muted text-xs sm:text-sm mt-2">
+          By eliminating intermediaries and working directly with master looms in Varanasi, Chanderi, and Jaipur, we deliver pure festival couture without luxury markups.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl border border-brand-border p-6 shadow-soft">
+          <div class="w-10 h-10 rounded-full bg-brand-emerald/10 text-brand-emerald flex items-center justify-center text-sm mb-4">
+            <i class="fa-solid fa-gem"></i>
+          </div>
+          <h3 class="font-serif text-xl mb-2">Artisanal Integrity</h3>
+          <p class="text-brand-muted text-xs leading-relaxed">
+            Every sari, kurta, and Nehru jacket features authentic hand-done Zari, Chikankari, or mirrorwork crafted by heritage guild artisans.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-brand-border p-6 shadow-soft">
+          <div class="w-10 h-10 rounded-full bg-brand-gold/15 text-brand-gold flex items-center justify-center text-sm mb-4">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+          </div>
+          <h3 class="font-serif text-xl mb-2">Transparent Pricing</h3>
+          <p class="text-brand-muted text-xs leading-relaxed">
+            No piece is ever artificially inflated. All prices are in Indian Rupees (₹) inclusive of GST, with no surprise charges at final checkout.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-brand-border p-6 shadow-soft">
+          <div class="w-10 h-10 rounded-full bg-brand-ruby/10 text-brand-ruby flex items-center justify-center text-sm mb-4">
+            <i class="fa-solid fa-truck-shield"></i>
+          </div>
+          <h3 class="font-serif text-xl mb-2">Insured Delivery</h3>
+          <p class="text-brand-muted text-xs leading-relaxed">
+            Free shipping across all India pin codes for orders over ₹1,999. Includes tamper-proof festive packaging and instant tracking.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-brand-dark text-white pt-12 pb-8 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10 border-b border-white/10">
+        
+        <div class="md:col-span-5 space-y-3">
+          <div class="font-serif text-2xl tracking-[0.25em] uppercase font-light text-white">Tamisu</div>
+          <p class="font-serif italic text-xs text-brand-gold">Elegance in every detail</p>
+          <p class="text-stone-400 text-xs leading-relaxed max-w-sm">
+            Handcrafted luxury festive wear strictly under ₹5,000. Curated for Diwali, weddings, Eid, and joyful family celebrations across India.
+          </p>
+          <div class="flex items-center gap-2 pt-2 text-[10px] font-mono text-emerald-400">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Strict Storewide Ceiling: Max ₹5,000 Active
+          </div>
+        </div>
+
+        <div class="md:col-span-3 space-y-2.5">
+          <h4 class="text-xs uppercase font-bold tracking-widest text-brand-gold mb-3">Shop Collections</h4>
+          <ul class="text-xs space-y-2 text-stone-400">
+            <li><button data-cat-nav="Women" class="hover:text-white transition-colors">Women's Handlooms</button></li>
+            <li><button data-cat-nav="Men" class="hover:text-white transition-colors">Men's Kurtas & Bandhgalas</button></li>
+            <li><button data-cat-nav="Atelier" class="hover:text-white transition-colors">Silk Stoles & Accessories</button></li>
+            <li><a href="#collection" class="hover:text-white transition-colors">Under ₹2,000 Festive Steals</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-4 space-y-2.5">
+          <h4 class="text-xs uppercase font-bold tracking-widest text-brand-gold mb-3">Customer Care</h4>
+          <ul class="text-xs space-y-2 text-stone-400">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-brand-gold text-[10px]"></i> concierge@tamisu.in</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-brand-gold text-[10px]"></i> +91 (022) 8000-5000</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-gold text-[10px]"></i> Tamisu Atelier, Fort, Mumbai 400001</li>
+            <li class="pt-2">
+              <button id="footer-ai-btn" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-brand-gold text-xs font-mono">
+                <i class="fa-solid fa-comments"></i> Launch AI Sizing Stylist
+              </button>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[10px] text-stone-400 font-mono text-center sm:text-left">
+        <div>&copy; 2025 Tamisu Atelier. Handcrafted in India. All prices in INR (₹).</div>
+        <div class="flex items-center gap-3">
+          <span>Terms & Conditions</span>
+          <span>•</span>
+          <span>Privacy Policy</span>
+          <span>•</span>
+          <span class="text-brand-gold">en-IN Currency Standard</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= SHOPPING BAG DRAWER ================= -->
+  <div id="cart-drawer-overlay" class="fixed inset-0 bg-brand-dark/50 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  <aside id="cart-drawer-panel" class="fixed top-0 right-0 h-full w-full sm:w-[420px] bg-brand-cream z-50 translate-x-full transition-transform duration-300 ease-out flex flex-col shadow-2xl">
+    
+    <!-- Drawer Header -->
+    <div class="p-5 border-b border-brand-border bg-white flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <i class="fa-solid fa-bag-shopping text-brand-gold"></i>
+        <h3 class="font-serif text-xl font-semibold">Your Shopping Bag</h3>
+      </div>
+      <button id="cart-drawer-close" class="w-8 h-8 rounded-full border border-brand-border flex items-center justify-center text-stone-500 hover:text-black">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Items List -->
+    <div id="cart-items-wrapper" class="flex-1 overflow-y-auto p-5 space-y-3">
+      <!-- Items dynamically populated -->
+    </div>
+
+    <!-- Drawer Footer / Summary -->
+    <div class="p-5 border-t border-brand-border bg-white space-y-3 shadow-sheet">
+      <div class="space-y-1.5 text-xs">
+        <div class="flex justify-between text-brand-muted">
+          <span>Bag Subtotal:</span>
+          <span id="cart-subtotal-val" class="font-mono font-bold text-brand-dark">₹0</span>
+        </div>
+        <div class="flex justify-between text-brand-emerald">
+          <span>Festive Privilege Discount (15%):</span>
+          <span id="cart-discount-val" class="font-mono font-bold">−₹0</span>
+        </div>
+        <div class="flex justify-between text-brand-muted">
+          <span>Shipping (Insured Express):</span>
+          <span id="cart-shipping-val" class="text-brand-emerald font-semibold uppercase text-[10px]">Free</span>
+        </div>
+        <div class="flex justify-between text-base font-serif font-bold text-brand-dark pt-2 border-t border-brand-border">
+          <span>Estimated Total:</span>
+          <span id="cart-total-val" class="font-mono text-lg text-brand-emerald">₹0</span>
+        </div>
+      </div>
+
+      <button 
+        id="btn-checkout-now" 
+        class="w-full py-4 rounded-full bg-brand-dark hover:bg-brand-charcoal text-white text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2 transition-all shadow-luxury active:scale-98"
+      >
+        <i class="fa-solid fa-lock text-brand-gold text-[10px]"></i>
+        <span>Checkout in ₹ INR</span>
+      </button>
+      <p class="text-center text-[10px] text-brand-muted font-mono">
+        All items strictly verified under ₹5,000 • GST 18% inclusive
+      </p>
+    </div>
+
+  </aside>
+
+  <!-- ================= FLOATING AI ASSISTANT WIDGET ================= -->
+  <!-- Floating Button -->
+  <div class="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40">
+    <button 
+      id="ai-toggle-btn"
+      class="group relative flex items-center gap-3 px-4 py-3 sm:px-5 sm:py-3.5 rounded-full bg-brand-dark text-white border-2 border-brand-gold/70 shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300"
+      aria-label="Open Tamisu AI Assistant"
+    >
+      <div class="relative w-8 h-8 rounded-full bg-gradient-to-tr from-brand-gold to-amber-200 flex items-center justify-center text-stone-950 font-bold">
+        <i class="fa-solid fa-wand-magic-sparkles text-xs"></i>
+        <span class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-brand-dark"></span>
+      </div>
+      <div class="text-left hidden min-[360px]:block">
+        <div class="text-[11px] font-bold tracking-wider leading-none text-brand-gold uppercase">Tamisu AI</div>
+        <div class="text-[9px] text-stone-300 leading-tight mt-0.5">Stylist & Sizing</div>
+      </div>
+    </button>
+  </div>
+
+  <!-- AI Chat Popup Modal / Window -->
+  <div 
+    id="ai-chat-window" 
+    class="fixed bottom-20 right-4 sm:bottom-24 sm:right-6 z-50 w-[92vw] sm:w-[380px] max-h-[580px] h-[520px] bg-brand-cream border border-brand-border rounded-2xl shadow-2xl flex flex-col overflow-hidden hidden chat-slide-up"
+  >
+    <!-- Chat Header -->
+    <div class="bg-brand-dark p-4 flex items-center justify-between text-white border-b border-white/10">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-brand-gold to-amber-200 flex items-center justify-center text-stone-900 font-bold text-xs">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+        </div>
+        <div>
+          <h4 class="font-serif text-base font-semibold leading-tight flex items-center gap-1.5">
+            Tamisu Assistant
+            <span class="text-[8px] bg-brand-emerald text-emerald-100 font-mono px-1.5 py-0.5 rounded">Active</span>
+          </h4>
+          <p class="font-serif italic text-[10px] text-brand-gold">Elegance in every detail</p>
+        </div>
+      </div>
+      <button id="ai-chat-close" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-stone-300 hover:text-white transition-colors">
+        <i class="fa-solid fa-xmark text-xs"></i>
+      </button>
+    </div>
+
+    <!-- Chat Messages Scroll Container -->
+    <div id="ai-messages-container" class="flex-1 overflow-y-auto p-4 space-y-3.5 text-xs">
+      
+      <!-- Welcome message -->
+      <div class="flex items-start gap-2.5">
+        <div class="w-6 h-6 rounded-full bg-brand-gold text-brand-dark flex items-center justify-center text-[10px] shrink-0 font-bold mt-1">
+          T
+        </div>
+        <div class="bg-white p-3 rounded-2xl rounded-tl-none border border-brand-border text-brand-dark shadow-sm leading-relaxed max-w-[85%]">
+          Namaste! I am your <strong>Tamisu Stylist</strong>. Every piece in our store is guaranteed <strong>under ₹5,000</strong>. How can I dress you today?
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Quick Clickable Prompt Buttons -->
+    <div class="p-2.5 bg-brand-sand/60 border-t border-brand-border flex gap-1.5 overflow-x-auto text-[10px] whitespace-nowrap">
+      <button data-quick="suggest" class="quick-prompt-btn px-2.5 py-1.5 bg-white border border-brand-border rounded-full hover:border-brand-gold hover:text-brand-dark font-medium transition-colors">
+        ✨ Suggest Festival Outfits
+      </button>
+      <button data-quick="track" class="quick-prompt-btn px-2.5 py-1.5 bg-white border border-brand-border rounded-full hover:border-brand-gold hover:text-brand-dark font-medium transition-colors">
+        📦 Track My Order
+      </button>
+      <button data-quick="size" class="quick-prompt-btn px-2.5 py-1.5 bg-white border border-brand-border rounded-full hover:border-brand-gold hover:text-brand-dark font-medium transition-colors">
+        📏 Size Guide Help
+      </button>
+      <button data-quick="under2k" class="quick-prompt-btn px-2.5 py-1.5 bg-white border border-brand-border rounded-full hover:border-brand-gold hover:text-brand-dark font-medium transition-colors">
+        🏷️ Under ₹2,000 Steals
+      </button>
+    </div>
+
+    <!-- Chat Input Form -->
+    <form id="ai-chat-form" class="p-3 bg-white border-t border-brand-border flex items-center gap-2">
+      <input 
+        id="ai-user-input" 
+        type="text" 
+        placeholder="Ask about sarees, kurtas, sizes, or budget..."
+        class="flex-1 bg-brand-sand/50 rounded-full px-3.5 py-2 text-xs border border-brand-border focus:outline-none focus:border-brand-gold text-brand-dark"
+      />
+      <button 
+        type="submit" 
+        class="w-9 h-9 rounded-full bg-brand-dark hover:bg-brand-charcoal text-brand-gold flex items-center justify-center shrink-0 transition-colors"
+      >
+        <i class="fa-solid fa-paper-plane text-xs"></i>
+      </button>
+    </form>
+  </div>
+
+  <!-- ================= GENERIC TOAST NOTIFICATION ================= -->
+  <div id="toast-notify" class="fixed top-20 right-5 z-50 max-w-sm bg-brand-dark text-white rounded-xl shadow-2xl p-4 border border-white/10 flex items-start gap-3 translate-x-full transition-transform duration-300 pointer-events-none">
+    <i id="toast-icon" class="fa-solid fa-circle-check text-brand-gold text-base mt-0.5"></i>
+    <div class="text-xs">
+      <div id="toast-title" class="font-bold">Notification</div>
+      <div id="toast-desc" class="text-stone-300 mt-0.5 text-[11px] leading-tight">Operation successful</div>
+    </div>
+  </div>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    /* -----------------------------------------------------------
+       1. INITIAL CATALOG DATA (Globally decreased festive rates)
+          Every single item strictly < ₹5,000
+       ----------------------------------------------------------- */
+    const INITIAL_PRODUCTS = [
+      {
+        id: "TMS-101",
+        title: "Mulberry Chanderi Silk Saree",
+        category: "Women",
+        original_price: 6990,
+        festive_price: 2890,
+        stock: 12,
+        image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=700&auto=format&fit=crop",
+        badge: "Under ₹3,000"
+      },
+      {
+        id: "TMS-102",
+        title: "Banarasi Floral Zari Silk Saree",
+        category: "Women",
+        original_price: 8990,
+        festive_price: 3850,
+        stock: 9,
+        image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=700&auto=format&fit=crop",
+        badge: "Bestseller"
+      },
+      {
+        id: "TMS-103",
+        title: "Mirrorwork Festive Kurta Set",
+        category: "Women",
+        original_price: 5290,
+        festive_price: 2490,
+        stock: 14,
+        image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=700&auto=format&fit=crop",
+        badge: "Popular"
+      },
+      {
+        id: "TMS-104",
+        title: "Anarkali Embroidered Flared Suit",
+        category: "Women",
+        original_price: 6490,
+        festive_price: 3190,
+        stock: 8,
+        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=700&auto=format&fit=crop",
+        badge: "Royal Cut"
+      },
+      {
+        id: "TMS-105",
+        title: "Raw Silk Royal Bandhgala Jacket",
+        category: "Men",
+        original_price: 7990,
+        festive_price: 4250,
+        stock: 7,
+        image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=700&auto=format&fit=crop",
+        badge: "Under ₹4,500"
+      },
+      {
+        id: "TMS-106",
+        title: "Chikankari Cotton Festive Kurta",
+        category: "Men",
+        original_price: 3990,
+        festive_price: 1890,
+        stock: 18,
+        image: "https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?q=80&w=700&auto=format&fit=crop",
+        badge: "Essential"
+      },
+      {
+        id: "TMS-107",
+        title: "Tussar Silk Nehru Jacket",
+        category: "Men",
+        original_price: 4990,
+        festive_price: 2450,
+        stock: 11,
+        image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=700&auto=format&fit=crop",
+        badge: "New Weave"
+      },
+      {
+        id: "TMS-108",
+        title: "Gold Threadwork Sherwani Kurta",
+        category: "Men",
+        original_price: 7490,
+        festive_price: 3790,
+        stock: 6,
+        image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=700&auto=format&fit=crop",
+        badge: "Wedding Edit"
+      },
+      {
+        id: "TMS-109",
+        title: "Zari Embroidered Organza Dupatta",
+        category: "Atelier",
+        original_price: 2990,
+        festive_price: 1290,
+        stock: 25,
+        image: "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?q=80&w=700&auto=format&fit=crop",
+        badge: "Under ₹1,500"
+      },
+      {
+        id: "TMS-110",
+        title: "Handloom Pashmina Wool Stole",
+        category: "Atelier",
+        original_price: 3490,
+        festive_price: 1690,
+        stock: 20,
+        image: "https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?q=80&w=700&auto=format&fit=crop",
+        badge: "Pure Wool"
+      },
+      {
+        id: "TMS-111",
+        title: "Kundan & Pearl Festive Choker",
+        category: "Atelier",
+        original_price: 2490,
+        festive_price: 999,
+        stock: 30,
+        image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=700&auto=format&fit=crop",
+        badge: "Steal Deal"
+      },
+      {
+        id: "TMS-112",
+        title: "Embroidered Velvet Mojari Juttis",
+        category: "Atelier",
+        original_price: 3290,
+        festive_price: 1450,
+        stock: 16,
+        image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=700&auto=format&fit=crop",
+        badge: "Handmade"
+      }
+    ];
+
+    // State management
+    let state = {
+      products: JSON.parse(localStorage.getItem('tamisu_products_v2')) || INITIAL_PRODUCTS,
+      category: 'all',
+      maxBudget: 5000, // strictly defaulted to 5000
+      sortBy: 'asc', // strictly sorted Low to High dynamically
+      search: '',
+      cart: JSON.parse(localStorage.getItem('tamisu_cart_v2')) || [],
+      blockedAttempts: 0
+    };
+
+    // Save helper
+    function persistProducts() {
+      localStorage.setItem('tamisu_products_v2', JSON.stringify(state.products));
+    }
+    function persistCart() {
+      localStorage.setItem('tamisu_cart_v2', JSON.stringify(state.cart));
+      renderCartUI();
+    }
+
+    // Number format in Indian Rupee
+    const inrFormatter = new Intl.NumberFormat('en-IN', {
+      style: 'currency',
+      currency: 'INR',
+      maximumFractionDigits: 0
+    });
+
+    function formatINR(val) {
+      return inrFormatter.format(val);
+    }
+
+    /* -----------------------------------------------------------
+       2. FILTERING & SORTING LOGIC
+       Enforcing max cap ₹5,000 + default ascending order
+       ----------------------------------------------------------- */
+    function getFilteredProducts() {
+      // Backend/Query simulation: Hard ceiling safety check
+      const ceiling = Math.min(state.maxBudget, 5000);
+
+      return state.products
+        .filter(p => p.festive_price <= ceiling)
+        .filter(p => state.category === 'all' || p.category === state.category)
+        .filter(p => {
+          if (!state.search) return true;
+          const q = state.search.toLowerCase();
+          return p.title.toLowerCase().includes(q) || p.category.toLowerCase().includes(q);
+        })
+        .sort((a, b) => {
+          if (state.sortBy === 'asc') return a.festive_price - b.festive_price;
+          if (state.sortBy === 'desc') return b.festive_price - a.festive_price;
+          if (state.sortBy === 'discount') {
+            const discA = (a.original_price - a.festive_price) / a.original_price;
+            const discB = (b.original_price - b.festive_price) / b.original_price;
+            return discB - discA;
+          }
+          return a.festive_price - b.festive_price;
+        });
+    }
+
+    /* -----------------------------------------------------------
+       3. RENDER PRODUCT GRID
+       ----------------------------------------------------------- */
+    function renderProductGrid() {
+      const grid = document.getElementById('product-grid-container');
+      const emptyMsg = document.getElementById('no-products-msg');
+      const countLabel = document.getElementById('live-active-count');
+      const items = getFilteredProducts();
+
+      countLabel.textContent = items.length;
+
+      if (items.length === 0) {
+        grid.innerHTML = '';
+        emptyMsg.classList.remove('hidden');
+        return;
+      } else {
+        emptyMsg.classList.add('hidden');
+      }
+
+      grid.innerHTML = items.map(p => {
+        const discountPercent = Math.round(((p.original_price - p.festive_price) / p.original_price) * 100);
+        return `
+          <div class="group bg-white rounded-2xl border border-brand-border/80 overflow-hidden shadow-soft hover:shadow-luxury-hover hover:-translate-y-1 transition-all duration-300 flex flex-col">
+            <!-- Product Image -->
+            <div class="relative h-64 sm:h-72 w-full overflow-hidden bg-stone-100 img-wrap">
+              <img 
+                src="${p.image}" 
+                alt="${p.title}" 
+                class="w-full h-full object-cover"
+                loading="lazy"
+                onerror="this.src='https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=700&auto=format&fit=crop'"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              
+              <!-- Badges -->
+              <div class="absolute top-2.5 left-2.5 flex flex-col gap-1">
+                <span class="bg-brand-emerald text-white text-[9px] uppercase font-mono font-bold px-2 py-0.5 rounded-full shadow">
+                  ≤ ₹5k Verified
+                </span>
+                ${p.badge ? `
+                  <span class="bg-white/95 text-brand-dark text-[9px] font-bold px-2 py-0.5 rounded-full shadow">
+                    ${p.badge}
+                  </span>
+                ` : ''}
+              </div>
+
+              <!-- Quick Discount Tag -->
+              <div class="absolute bottom-2.5 right-2.5">
+                <span class="bg-rose-900/90 text-white text-[10px] font-mono font-bold px-2 py-0.5 rounded-md backdrop-blur-xs">
+                  ${discountPercent}% OFF
+                </span>
+              </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between text-[10px] font-mono text-brand-muted uppercase tracking-wider mb-1">
+                  <span>${p.category}</span>
+                  <span class="text-stone-400">Stock: ${p.stock}</span>
+                </div>
+                <h3 class="font-serif text-base sm:text-lg text-brand-dark leading-snug group-hover:text-brand-gold transition-colors">
+                  ${p.title}
+                </h3>
+              </div>
+
+              <!-- Price Structure -->
+              <div class="pt-4 border-t border-brand-border/60 mt-4">
+                <div class="flex items-baseline gap-2">
+                  <span class="text-base sm:text-lg font-mono font-bold text-brand-dark">
+                    ${formatINR(p.festive_price)}
+                  </span>
+                  <span class="text-xs font-mono text-brand-muted line-through">
+                    ${formatINR(p.original_price)}
+                  </span>
+                </div>
+
+                <!-- Touch-friendly Dynamic Full Width CTA on mobile -->
+                <button 
+                  onclick="addToBag('${p.id}')"
+                  class="mt-3 w-full py-2.5 sm:py-3 rounded-full bg-brand-sand hover:bg-brand-dark text-brand-dark hover:text-white border border-brand-border hover:border-brand-dark text-xs uppercase tracking-wider font-bold transition-all flex items-center justify-center gap-2 active:scale-95"
+                >
+                  <i class="fa-solid fa-bag-shopping text-[11px] text-brand-gold"></i>
+                  <span>Add to Bag</span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    /* -----------------------------------------------------------
+       4. AKSHATA DASHBOARD CONTROLS (Distraction-free workflow)
+          Strict validation blocking any item > ₹5,000
+       ----------------------------------------------------------- */
+    function renderAdminTable() {
+      const tbody = document.getElementById('admin-table-rows');
+      const skuCount = document.getElementById('dash-sku-count');
+      const avgLabel = document.getElementById('dash-avg-price');
+      const blockedLabel = document.getElementById('dash-blocked-count');
+
+      skuCount.textContent = state.products.length;
+      blockedLabel.textContent = state.blockedAttempts;
+
+      const totalVal = state.products.reduce((acc, curr) => acc + curr.festive_price, 0);
+      const avg = state.products.length ? Math.round(totalVal / state.products.length) : 0;
+      avgLabel.textContent = formatINR(avg);
+
+      tbody.innerHTML = state.products.map(p => `
+        <tr class="hover:bg-white/5 transition-colors">
+          <td class="p-3.5">
+            <div class="font-bold text-white">${p.title}</div>
+            <div class="text-[9px] text-stone-500 font-mono">${p.id}</div>
+          </td>
+          <td class="p-3.5 text-stone-300">${p.category}</td>
+          <td class="p-3.5 text-stone-400 font-mono">₹${p.original_price}</td>
+          <td class="p-3.5">
+            <div class="flex items-center gap-1.5">
+              <span class="text-stone-400">₹</span>
+              <input 
+                type="number" 
+                min="100" 
+                max="5000" 
+                value="${p.festive_price}" 
+                onchange="handleAdminPriceUpdate('${p.id}', this.value, this)"
+                class="w-20 bg-stone-950 border border-brand-gold/40 text-brand-gold text-xs font-mono px-2 py-1 rounded focus:outline-none focus:border-brand-gold"
+              />
+            </div>
+          </td>
+          <td class="p-3.5">
+            <input 
+              type="number" 
+              min="0" 
+              value="${p.stock}" 
+              onchange="handleAdminStockUpdate('${p.id}', this.value)"
+              class="w-14 bg-stone-950 border border-white/10 text-stone-200 text-xs font-mono px-2 py-1 rounded focus:outline-none focus:border-white/30"
+            />
+          </td>
+          <td class="p-3.5 text-right">
+            <button 
+              onclick="deleteProduct('${p.id}')"
+              class="text-rose-400 hover:text-rose-300 p-1.5 text-xs transition-colors"
+              title="Remove item"
+            >
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    // Backend Constraint Simulation: Update item price
+    window.handleAdminPriceUpdate = function(id, newPriceVal, inputEl) {
+      const price = Number(newPriceVal);
+      // Hard Backend Guard Constraint
+      if (price > 5000) {
+        state.blockedAttempts++;
+        showToast("Constraint Violated", "Strict Rule: No garment may exceed ₹5,000 INR. Update rejected.", "fa-circle-xmark");
+        const prod = state.products.find(p => p.id === id);
+        if (prod) inputEl.value = prod.festive_price;
+        renderAdminTable();
+        return;
+      }
+
+      if (price < 100) {
+        showToast("Invalid Price", "Price must be at least ₹100.", "fa-circle-exclamation");
+        return;
+      }
+
+      state.products = state.products.map(p => {
+        if (p.id === id) return { ...p, festive_price: price };
+        return p;
+      });
+      persistProducts();
+      renderProductGrid();
+      renderAdminTable();
+      showToast("Price Updated", `Garment updated to ${formatINR(price)} with budget checks satisfied.`);
+    };
+
+    window.handleAdminStockUpdate = function(id, newStock) {
+      state.products = state.products.map(p => {
+        if (p.id === id) return { ...p, stock: Number(newStock) };
+        return p;
+      });
+      persistProducts();
+      renderProductGrid();
+      renderAdminTable();
+    };
+
+    window.deleteProduct = function(id) {
+      state.products = state.products.filter(p => p.id !== id);
+      persistProducts();
+      renderProductGrid();
+      renderAdminTable();
+      showToast("SKU Removed", "Product deleted from active store catalog.");
+    };
+
+    // Add Form Submit with strict ₹5,000 rule check
+    document.getElementById('admin-add-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const title = document.getElementById('new-item-title').value.trim();
+      const category = document.getElementById('new-item-cat').value;
+      const original_price = Number(document.getElementById('new-item-mrp').value);
+      const festive_price = Number(document.getElementById('new-item-price').value);
+      const stock = Number(document.getElementById('new-item-stock').value);
+      const errBanner = document.getElementById('form-budget-error');
+
+      // Backend Constraint Validation
+      if (festive_price > 5000) {
+        state.blockedAttempts++;
+        errBanner.classList.remove('hidden');
+        showToast("Constraint Error", "Festive price must not exceed ₹5,000. Entry blocked.", "fa-circle-xmark");
+        renderAdminTable();
+        return;
+      } else {
+        errBanner.classList.add('hidden');
+      }
+
+      const newSku = {
+        id: `TMS-${Date.now().toString().slice(-4)}`,
+        title,
+        category,
+        original_price: Math.max(original_price, festive_price),
+        festive_price,
+        stock: stock || 10,
+        image: category === 'Men' 
+          ? "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=700&auto=format&fit=crop"
+          : category === 'Atelier'
+          ? "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?q=80&w=700&auto=format&fit=crop"
+          : "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=700&auto=format&fit=crop",
+        badge: "New Release"
+      };
+
+      state.products.unshift(newSku);
+      persistProducts();
+      renderProductGrid();
+      renderAdminTable();
+      this.reset();
+      updateFormMeter(2490);
+      showToast("Catalog Sync", `"${title}" added successfully at ${formatINR(festive_price)}.`);
+    });
+
+    // Dynamic Meter in the Admin Form
+    const priceInput = document.getElementById('new-item-price');
+    function updateFormMeter(val) {
+      const num = Number(val) || 0;
+      const pct = Math.min(Math.round((num / 5000) * 100), 100);
+      const meterBar = document.getElementById('form-budget-bar');
+      const meterLabel = document.getElementById('form-budget-meter');
+      const errBanner = document.getElementById('form-budget-error');
+
+      meterBar.style.width = pct + '%';
+      if (num > 5000) {
+        meterBar.classList.replace('bg-brand-gold', 'bg-rose-500');
+        meterLabel.textContent = `OVER BUDGET: ${num} > ₹5,000`;
+        meterLabel.classList.replace('text-emerald-400', 'text-rose-400');
+        errBanner.classList.remove('hidden');
+      } else {
+        meterBar.classList.replace('bg-rose-500', 'bg-brand-gold');
+        meterLabel.textContent = `${pct}% of ₹5,000 cap`;
+        meterLabel.classList.replace('text-rose-400', 'text-emerald-400');
+        errBanner.classList.add('hidden');
+      }
+    }
+    priceInput.addEventListener('input', (e) => updateFormMeter(e.target.value));
+
+    // Reset Demo Data
+    document.getElementById('admin-reset-demo').addEventListener('click', () => {
+      if (confirm("Reset catalog back to initial festive pieces under ₹5,000?")) {
+        state.products = [...INITIAL_PRODUCTS];
+        state.blockedAttempts = 0;
+        persistProducts();
+        renderProductGrid();
+        renderAdminTable();
+        showToast("Store Reset", "Active inventory refreshed to default collection.");
+      }
+    });
+
+    /* -----------------------------------------------------------
+       5. SHOPPING BAG & CHECKOUT
+       ----------------------------------------------------------- */
+    window.addToBag = function(id) {
+      const prod = state.products.find(p => p.id === id);
+      if (!prod) return;
+
+      const existing = state.cart.find(i => i.id === id);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        state.cart.push({
+          id: prod.id,
+          title: prod.title,
+          festive_price: prod.festive_price,
+          image: prod.image,
+          qty: 1
+        });
+      }
+      persistCart();
+      showToast("Added to Bag", `${prod.title} added (${formatINR(prod.festive_price)}).`);
+    };
+
+    function renderCartUI() {
+      const badge = document.getElementById('cart-badge-count');
+      const wrapper = document.getElementById('cart-items-wrapper');
+      const subtotalLabel = document.getElementById('cart-subtotal-val');
+      const discountLabel = document.getElementById('cart-discount-val');
+      const totalLabel = document.getElementById('cart-total-val');
+
+      const totalItems = state.cart.reduce((a, b) => a + b.qty, 0);
+      badge.textContent = totalItems;
+
+      if (state.cart.length === 0) {
+        wrapper.innerHTML = `
+          <div class="text-center py-14">
+            <div class="w-12 h-12 rounded-full bg-brand-sand text-brand-muted flex items-center justify-center mx-auto mb-3">
+              <i class="fa-solid fa-bag-shopping text-sm"></i>
+            </div>
+            <p class="font-serif text-lg text-brand-dark">Your bag is empty</p>
+            <p class="text-xs text-brand-muted mt-1">Discover handcrafted elegance under ₹5,000.</p>
+          </div>
+        `;
+        subtotalLabel.textContent = '₹0';
+        discountLabel.textContent = '−₹0';
+        totalLabel.textContent = '₹0';
+        return;
+      }
+
+      const subtotal = state.cart.reduce((a, b) => a + (b.festive_price * b.qty), 0);
+      const discount = Math.round(subtotal * 0.15); // 15% festive promo
+      const finalTotal = subtotal - discount;
+
+      subtotalLabel.textContent = formatINR(subtotal);
+      discountLabel.textContent = `−${formatINR(discount)}`;
+      totalLabel.textContent = formatINR(finalTotal);
+
+      wrapper.innerHTML = state.cart.map(item => `
+        <div class="flex items-center gap-3 bg-white p-3 rounded-xl border border-brand-border">
+          <img src="${item.image}" alt="${item.title}" class="w-14 h-16 object-cover rounded-lg bg-stone-100" />
+          <div class="flex-1 min-w-0">
+            <h4 class="text-xs font-serif font-bold text-brand-dark truncate">${item.title}</h4>
+            <div class="text-xs font-mono font-bold text-brand-emerald mt-0.5">${formatINR(item.festive_price)}</div>
+            <div class="flex items-center gap-2 mt-2">
+              <button onclick="changeCartQty('${item.id}', -1)" class="w-6 h-6 rounded border border-brand-border flex items-center justify-center text-xs hover:bg-brand-sand">-</button>
+              <span class="text-xs font-mono px-1">${item.qty}</span>
+              <button onclick="changeCartQty('${item.id}', 1)" class="w-6 h-6 rounded border border-brand-border flex items-center justify-center text-xs hover:bg-brand-sand">+</button>
+            </div>
+          </div>
+          <button onclick="removeCartItem('${item.id}')" class="text-stone-400 hover:text-rose-600 p-2 text-xs">
+            <i class="fa-solid fa-trash-can"></i>
+          </button>
+        </div>
+      `).join('');
+    }
+
+    window.changeCartQty = function(id, delta) {
+      state.cart = state.cart.map(item => {
+        if (item.id === id) {
+          const newQty = item.qty + delta;
+          return newQty > 0 ? { ...item, qty: newQty } : null;
+        }
+        return item;
+      }).filter(Boolean);
+      persistCart();
+    };
+
+    window.removeCartItem = function(id) {
+      state.cart = state.cart.filter(item => item.id !== id);
+      persistCart();
+      showToast("Bag Updated", "Garment removed from bag.");
+    };
+
+    // Checkout button handler
+    document.getElementById('btn-checkout-now').addEventListener('click', () => {
+      if (state.cart.length === 0) {
+        showToast("Bag is Empty", "Add pieces under ₹5,000 before proceeding.", "fa-circle-exclamation");
+        return;
+      }
+      const total = document.getElementById('cart-total-val').textContent;
+      alert(`🎉 Thank you for celebrating with Tamisu Atelier!\n\nOrder Total: ${total}\nEvery piece verified ≤ ₹5,000.\nComplimentary insured delivery dispatched with GST invoice.`);
+      state.cart = [];
+      persistCart();
+      toggleCartDrawer(false);
+    });
+
+    /* -----------------------------------------------------------
+       6. AI ASSISTANT COMPONENT (Fully restored & programmed)
+       ----------------------------------------------------------- */
+    const aiChatWindow = document.getElementById('ai-chat-window');
+    const aiToggleBtn = document.getElementById('ai-toggle-btn');
+    const aiChatClose = document.getElementById('ai-chat-close');
+    const aiMessages = document.getElementById('ai-messages-container');
+    const aiForm = document.getElementById('ai-chat-form');
+    const aiInput = document.getElementById('ai-user-input');
+
+    function toggleAiChat(show) {
+      if (show) {
+        aiChatWindow.classList.remove('hidden');
+        aiInput.focus();
+      } else {
+        aiChatWindow.classList.add('hidden');
+      }
+    }
+
+    aiToggleBtn.addEventListener('click', () => {
+      const isHidden = aiChatWindow.classList.contains('hidden');
+      toggleAiChat(isHidden);
+    });
+    aiChatClose.addEventListener('click', () => toggleAiChat(false));
+    document.getElementById('header-ai-btn').addEventListener('click', () => toggleAiChat(true));
+    document.getElementById('hero-ai-trigger').addEventListener('click', () => toggleAiChat(true));
+    document.getElementById('mobile-open-ai').addEventListener('click', () => {
+      toggleMobileMenu(false);
+      toggleAiChat(true);
+    });
+    document.getElementById('footer-ai-btn').addEventListener('click', () => toggleAiChat(true));
+
+    function appendAiMessage(sender, text, isHtml = false) {
+      const msgDiv = document.createElement('div');
+      msgDiv.className = sender === 'user' ? 'flex justify-end' : 'flex items-start gap-2.5';
+
+      if (sender === 'user') {
+        msgDiv.innerHTML = `
+          <div class="bg-brand-dark text-white p-3 rounded-2xl rounded-tr-none text-xs max-w-[85%] leading-relaxed">
+            ${text}
+          </div>
+        `;
+      } else {
+        msgDiv.innerHTML = `
+          <div class="w-6 h-6 rounded-full bg-brand-gold text-brand-dark flex items-center justify-center text-[10px] shrink-0 font-bold mt-1">
+            T
+          </div>
+          <div class="bg-white p-3 rounded-2xl rounded-tl-none border border-brand-border text-brand-dark shadow-sm leading-relaxed max-w-[85%]">
+            ${isHtml ? text : text.replace(/\n/g, '<br>')}
+          </div>
+        `;
+      }
+      aiMessages.appendChild(msgDiv);
+      aiMessages.scrollTop = aiMessages.scrollHeight;
+    }
+
+    // AI Intent matching
+    function handleAiQuery(query) {
+      const q = query.toLowerCase();
+
+      if (q.includes('suggest') || q.includes('outfit') || q.includes('festival') || q.includes('diwali') || q.includes('wedding')) {
+        const topPicks = state.products.slice(0, 2);
+        appendAiMessage('bot', `Here are two handpicked festive couture pieces under our ₹5,000 threshold:
+          <div class="mt-2 space-y-2">
+            ${topPicks.map(p => `
+              <div class="p-2 rounded-lg bg-brand-sand/50 border border-brand-border flex items-center justify-between">
+                <div>
+                  <div class="font-bold text-xs">${p.title}</div>
+                  <div class="text-[10px] font-mono text-brand-emerald">${formatINR(p.festive_price)}</div>
+                </div>
+                <button onclick="addToBag('${p.id}')" class="px-2.5 py-1 bg-brand-dark text-white text-[10px] rounded-full font-bold">
+                  + Add
+                </button>
+              </div>
+            `).join('')}
+          </div>
+        `, true);
+        return;
+      }
+
+      if (q.includes('track') || q.includes('order') || q.includes('status')) {
+        appendAiMessage('bot', `📦 <strong>Order Tracking Service:</strong><br>All Tamisu deliveries ship within 24 hours via Bluedart Insured Express. If you have an active order ID (e.g. <em>TMS-2025-1102</em>), standard delivery time is 2-4 business days across India.`);
+        return;
+      }
+
+      if (q.includes('size') || q.includes('guide') || q.includes('fitting') || q.includes('chart')) {
+        appendAiMessage('bot', `📏 <strong>Tamisu Sizing Guide:</strong><br>
+        • <strong>Women:</strong> XS (32"), S (34"), M (36"), L (38"), XL (40"), XXL (42")<br>
+        • <strong>Men's Kurtas:</strong> 38 (S), 40 (M), 42 (L), 44 (XL)<br>
+        • <strong>Sarees:</strong> 5.5m handloom silk + 0.8m unstitched blouse piece.<br>
+        <em>All garments include 2-inch internal alteration margins.</em>`);
+        return;
+      }
+
+      if (q.includes('under 2000') || q.includes('cheap') || q.includes('steal') || q.includes('budget') || q.includes('under2k')) {
+        const steals = state.products.filter(p => p.festive_price < 2000);
+        if (steals.length > 0) {
+          appendAiMessage('bot', `🏷️ <strong>Exclusive Steals Under ₹2,000:</strong><br>
+          We have ${steals.length} handcrafted pieces starting at just <strong>${formatINR(steals[0].festive_price)}</strong>. Use our catalog budget slider to view them immediately!`);
+        } else {
+          appendAiMessage('bot', `All our pieces stay strictly under ₹5,000! Check our Accessories category for stoles and dupattas beginning at ₹999.`);
+        }
+        return;
+      }
+
+      // Default smart reply
+      appendAiMessage('bot', `At Tamisu Atelier, Akshata guarantees that every silk weave and kurta is priced strictly under ₹5,000. Feel free to ask about our silk sarees, men's bandhgalas, custom alterations, or express festival delivery.`);
+    }
+
+    aiForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const val = aiInput.value.trim();
+      if (!val) return;
+      appendAiMessage('user', val);
+      aiInput.value = '';
+      setTimeout(() => handleAiQuery(val), 400);
+    });
+
+    // Quick prompt buttons
+    document.querySelectorAll('.quick-prompt-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const type = btn.getAttribute('data-quick');
+        if (type === 'suggest') {
+          appendAiMessage('user', "Suggest Festival Outfits");
+          setTimeout(() => handleAiQuery("suggest festival outfits"), 300);
+        } else if (type === 'track') {
+          appendAiMessage('user', "Track My Order");
+          setTimeout(() => handleAiQuery("track order status"), 300);
+        } else if (type === 'size') {
+          appendAiMessage('user', "Size Guide Help");
+          setTimeout(() => handleAiQuery("size guide help"), 300);
+        } else if (type === 'under2k') {
+          appendAiMessage('user', "Under ₹2,000 Steals");
+          setTimeout(() => handleAiQuery("under 2000 steals"), 300);
+        }
+      });
+    });
+
+    /* -----------------------------------------------------------
+       7. UI INTERACTION LISTENERS & MOBILE-FIRST DRAWER
+       ----------------------------------------------------------- */
+    // Filter Chips
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        state.category = btn.getAttribute('data-filter');
+        renderProductGrid();
+      });
+    });
+
+    // Nav Category Triggers
+    document.querySelectorAll('[data-cat-nav]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const cat = btn.getAttribute('data-cat-nav');
+        state.category = cat;
+        // sync chip
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          if (b.getAttribute('data-filter') === cat) b.classList.add('active');
+          else b.classList.remove('active');
+        });
+        document.getElementById('collection').scrollIntoView({ behavior: 'smooth' });
+        renderProductGrid();
+      });
+    });
+
+    // Budget Slider Listener
+    const slider = document.getElementById('slider-budget');
+    const budgetDisplay = document.getElementById('budget-val-display');
+
+    function updateSliderFill(val) {
+      const pct = ((val - 500) / (5000 - 500)) * 100;
+      slider.style.setProperty('--fill', `${pct}%`);
+    }
+
+    slider.addEventListener('input', (e) => {
+      const val = Number(e.target.value);
+      state.maxBudget = val;
+      budgetDisplay.textContent = formatINR(val);
+      updateSliderFill(val);
+      renderProductGrid();
+    });
+    updateSliderFill(5000);
+
+    // Sort Select Listener
+    document.getElementById('catalog-sort').addEventListener('change', (e) => {
+      state.sortBy = e.target.value;
+      renderProductGrid();
+    });
+
+    // Search Listeners
+    const searchInput = document.getElementById('global-search');
+    const mobileSearch = document.getElementById('mobile-search-input');
+
+    function handleSearch(val) {
+      state.search = val.trim();
+      renderProductGrid();
+    }
+    searchInput.addEventListener('input', (e) => handleSearch(e.target.value));
+    mobileSearch.addEventListener('input', (e) => handleSearch(e.target.value));
+
+    // Reset Filter Button
+    document.getElementById('reset-filter-btn').addEventListener('click', () => {
+      state.category = 'all';
+      state.maxBudget = 5000;
+      state.search = '';
+      slider.value = 5000;
+      budgetDisplay.textContent = '₹5,000';
+      updateSliderFill(5000);
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        if (b.getAttribute('data-filter') === 'all') b.classList.add('active');
+        else b.classList.remove('active');
+      });
+      renderProductGrid();
+    });
+
+    // Mobile Navigation Drawer Toggle
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const mobileOverlay = document.getElementById('mobile-overlay');
+
+    function toggleMobileMenu(show) {
+      if (show) {
+        mobileOverlay.classList.remove('opacity-0', 'pointer-events-none');
+        mobileDrawer.classList.remove('translate-x-full');
+      } else {
+        mobileOverlay.classList.add('opacity-0', 'pointer-events-none');
+        mobileDrawer.classList.add('translate-x-full');
+      }
+    }
+
+    document.getElementById('mobile-drawer-btn').addEventListener('click', () => toggleMobileMenu(true));
+    document.getElementById('mobile-close-btn').addEventListener('click', () => toggleMobileMenu(false));
+    mobileOverlay.addEventListener('click', () => toggleMobileMenu(false));
+
+    // Mobile nav category buttons
+    document.querySelectorAll('[data-cat-mobile]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const cat = btn.getAttribute('data-cat-mobile');
+        state.category = cat;
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          if (b.getAttribute('data-filter') === cat) b.classList.add('active');
+          else b.classList.remove('active');
+        });
+        toggleMobileMenu(false);
+        document.getElementById('collection').scrollIntoView({ behavior: 'smooth' });
+        renderProductGrid();
+      });
+    });
+
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => toggleMobileMenu(false));
+    });
+
+    // Cart Drawer Toggle
+    const cartPanel = document.getElementById('cart-drawer-panel');
+    const cartOverlay = document.getElementById('cart-drawer-overlay');
+
+    function toggleCartDrawer(show) {
+      if (show) {
+        cartOverlay.classList.remove('opacity-0', 'pointer-events-none');
+        cartPanel.classList.remove('translate-x-full');
+      } else {
+        cartOverlay.classList.add('opacity-0', 'pointer-events-none');
+        cartPanel.classList.add('translate-x-full');
+      }
+    }
+
+    document.getElementById('cart-trigger').addEventListener('click', () => toggleCartDrawer(true));
+    document.getElementById('cart-drawer-close').addEventListener('click', () => toggleCartDrawer(false));
+    cartOverlay.addEventListener('click', () => toggleCartDrawer(false));
+
+    // Toast Notification Utility
+    let toastTimeout;
+    function showToast(title, desc, icon = "fa-circle-check") {
+      const toast = document.getElementById('toast-notify');
+      const toastTitle = document.getElementById('toast-title');
+      const toastDesc = document.getElementById('toast-desc');
+      const toastIcon = document.getElementById('toast-icon');
+
+      toastTitle.textContent = title;
+      toastDesc.textContent = desc;
+      toastIcon.className = `fa-solid ${icon} text-brand-gold text-base mt-0.5`;
+
+      toast.classList.remove('translate-x-full');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.add('translate-x-full');
+      }, 3500);
+    }
+
+    /* -----------------------------------------------------------
+       8. INITIALIZATION
+       ----------------------------------------------------------- */
+    document.addEventListener('DOMContentLoaded', () => {
+      renderProductGrid();
+      renderAdminTable();
+      renderCartUI();
+    });
+  </script>
+</body>
+</html>
